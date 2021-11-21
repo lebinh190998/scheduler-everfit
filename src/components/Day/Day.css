@@ -1,0 +1,32 @@
+.date-container {
+  color: #6a7988;
+  font-size: 11px;
+  position: relative;
+  width: 13%;
+  height: 550px;
+}
+
+.date {
+  color: #728096;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #f3f5f8;
+  border-radius: 0.3em;
+  height: 100%;
+}
+
+.workouts {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+}
+
+.today {
+  color: #5a57cb;
+}
+
+.text {
+  padding-bottom: 10px;
+}

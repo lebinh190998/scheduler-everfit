@@ -1,25 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect, useState } from 'react';
+import { dates } from './utils';
 
-function App() {
+//Components
+import Day from './components/Day/Day';
+
+//Redux
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+const App = ({ day }) => {
+  const [days, setDays] = useState([]);
+
+  useEffect(() => {
+    setDays(dates(new Date()));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <div className='app-container'>
+        {days?.map((item) => {
+          const d = new Date();
+          const isToday = d.getDate() == item.date;
+          return <Day dateItem={item} isToday={isToday} />;
+        })}
+      </div>
     </div>
   );
-}
+};
 
-export default App;
+App.propTypes = {
+  day: PropTypes.object.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  day: state.day,
+});
+
+export default React.memo(connect(mapStateToProps, {})(App));

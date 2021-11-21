@@ -1,0 +1,23 @@
+.exercise-container {
+  width: 90%;
+  min-height: 20px;
+  border-radius: 0.3em;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  background-color: white;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.exercise-title {
+  font-size: 13px;
+  text-align: right;
+  color: #000;
+  border-radius: 0.3em;
+}
+
+.exercise-content {
+  position: relative;
+  color: #95a6b7;
+  display: flex;
+  justify-content: space-between;
+}
